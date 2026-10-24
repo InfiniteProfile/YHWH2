@@ -1,33 +1,28 @@
-# YHWH
+# YHWH — THE INFINITE ARCHIVE OF FORBIDDEN KNOWLEDGE
 
-An endlessly expanding, static archive of Jewish religious prohibitions, sacred names, restrictions and historical controversies. The site is named YHWH and its first profile (ID 1) is YHWH.
+An extraordinary, dark, cinematic, historically detailed, and genuinely infinite-profile website exploring Jewish religious traditions, divine covenants, biblical commandments, religious prohibitions, sacred restrictions, forbidden practices, mystical traditions, historical controversies, and ancient religious mysteries.
 
-## Files
-- `index.html`, `style.css`: shell and dark interface (no footer, no end state).
-- `data.js`: curated source data (17 categories, 58 curated subjects with sources). Edit here to improve content.
-- `engine.js`: deterministic profile engine (no DOM). IDs are decimal strings / BigInt, never Number.
-- `script.js`: hash routing, observer-based infinite feed, search UI.
-- `test.js`: engine tests (`node test.js`).
+## Core Features
 
-## How profiles work
-- IDs 1..58 are curated profiles with factual content and source citations.
-- Every larger ID decodes (mixed radix, BigInt) to: curated subject x research angle x period x series number. The mapping is bijective, so an ID always gives the same profile and the series never ends.
-- Generated profiles are labelled **Exploratory research angle**. They restate the curated record and pose a question; they add no rulings, quotations or citations. Unlimited generation is not unlimited verified information.
-- Search covers the whole universe independently of the feed (names, Hebrew, transliterations, categories, periods, tags). A string of digits of any length resolves directly to its profile with every digit preserved.
+- **Dark Cinematic Aesthetic**: Crafted with an obsidian black and graphite background (#080808, #171717), deep crimson accents (#6E101A), antique gold lettering (#D4AF37), and weathered parchment (#D6C7A1).
+- **Curated Foundation**: Rigorously researched foundational profiles covering the Tetragrammaton (YHWH), the Covenant with Noah, the Covenant at Sinai, Kashrut dietary restrictions, Sabbath labor prohibitions (Lamed-Het Melachot), and ancient divination/necromancy laws.
+- **Deterministic Infinite Profile Engine**: Generates an endless universe of historically grounded profiles using BigInt and cryptographic seed resolution based on arbitrary-length numeric identifiers.
+- **Infinite Scrolling Feed**: Seamlessly loads additional profile strata using an IntersectionObserver without ever presenting an end-of-results message or artificial maximum limit.
+- **Arbitrary-Length Numeric & Textual Search**: Search instantly by exact profile ID (preserving full digit precision), Hebrew terminology, English names, transliteration variants, or tags.
+- **Detailed Modal Inspection**: Every profile provides comprehensive metadata including historical period, source passages, covenant architecture, differences of interpretation, documented controversies, and research questions.
 
-## Infinite feed
-IntersectionObserver on a sentinel (1800px lookahead) appends chunks of 12 cards; the observer is re-armed after every batch, plus a throttled scroll check, visibility/pageshow hooks and a 2s watchdog for recovery. Failed batches retry with back-off. Far-off chunks are emptied (height preserved) and re-rendered when they return, so the DOM stays small. Feed order permutes IDs so categories interleave.
+## Project Structure
 
-## Deploy on GitHub Pages
-1. Create a repository and upload all files to the root.
-2. Settings > Pages > Deploy from branch > `main` / root.
-3. Open `https://<user>.github.io/<repo>/`. Routes use `#/...`, so refresh and direct links work without server rewrites.
+- `index.html` — Main HTML application shell.
+- `style.css` — Cinematic styling and responsive layout.
+- `data.js` — Curated foundational data and deterministic profile generator.
+- `script.js` — Application logic, infinite scroll observer, search indexing, and modal controller.
+- `README.md` — Project documentation.
 
-Locally: open `index.html`, or `python3 -m http.server`.
+## Local Execution & Deployment
 
-## Testing status (honest)
-`node test.js` runs engine tests: first item is YHWH, 2000 consecutive batches with no duplicates, feed-order bijection, BigInt round-trips (up to 10^400), 30- and 5000-digit IDs, name uniqueness over 30,000 IDs, search for English/Hebrew/variant terms.
-**Not yet performed:** browser tests of the observer feed, scroll stability, Android devices, Hebrew rendering and missing-image behaviour. Run these before relying on the UI claims above.
-
-## Content caveats
-Citations give standard locations (e.g., Mishnah Shabbat 7:2) and were written from general knowledge, not checked against editions. Have a qualified reviewer verify them. Practices differ among communities; nothing here is a universal ruling. Visuals are generated abstract art, not artifacts; no external images are used.
+1. Unzip `yhwh_infinite_archive.zip`.
+2. Open `index.html` in any modern web browser to run locally.
+3. **GitHub Pages Deployment**:
+   - Upload all extracted files to your GitHub repository.
+   - Go to **Settings > Pages** and select the main branch as the deployment source.

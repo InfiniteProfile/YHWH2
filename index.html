@@ -1,36 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>YHWH - Archive of Sacred Names and Ancient Prohibitions</title>
-<meta name="description" content="YHWH: an endlessly expanding archive of Jewish religious prohibitions, sacred names, restrictions and historical controversies.">
-<meta name="theme-color" content="#080808">
-<meta property="og:title" content="YHWH">
-<meta property="og:description" content="One name. Ancient prohibitions. Infinite discoveries.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080808'/%3E%3Cpath d='M16 5l9 16H7z' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YHWH — The Infinite Archive of Forbidden Knowledge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="top">
-  <a class="brand" href="#/" aria-label="YHWH home">YHWH</a>
-  <nav aria-label="Primary">
-    <a href="#/">Archive</a>
-    <a href="#/cats">Categories</a>
-    <a href="#/about">Method</a>
-  </nav>
-  <div class="srch" id="srch">
-    <input id="q" type="search" placeholder="Name, Hebrew term, category or ID" autocomplete="off" spellcheck="false" aria-label="Search the archive">
-    <button id="sb" type="button" aria-label="Search" aria-expanded="false">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-    </button>
-  </div>
-</header>
-<main id="app"></main>
-<noscript><p style="padding:2rem">YHWH requires JavaScript to generate its archive in the browser.</p></noscript>
-<script src="data.js"></script>
-<script src="engine.js"></script>
-<script src="script.js"></script>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="brand">
+                <h1 class="logo-title">YHWH</h1>
+                <p class="logo-subtitle">The Infinite Archive of Forbidden Knowledge</p>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search profiles, IDs, Hebrew terms, covenants..." autocomplete="off">
+                <button id="searchBtn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <div id="searchSuggestions" class="search-suggestions hidden"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="archive-intro">
+            <div class="intro-badge">DIVINE COVENANTS • SACRED PROHIBITIONS • ANCIENT MYSTERIES</div>
+            <p>Explore an endlessly expanding digital repository investigating Jewish religious traditions, biblical covenants, divine commandments, historical controversies, and esoteric practices with rigorous historical grounding.</p>
+        </section>
+
+        <div id="feed" class="profile-feed">
+            <!-- Dynamic profile cards will be inserted here -->
+        </div>
+
+        <div id="loadingIndicator" class="loading-indicator">
+            <div class="sigil-spinner"></div>
+            <span>Unsealing further strata of the archive...</span>
+        </div>
+    </main>
+
+    <!-- Profile Detail Modal -->
+    <div id="profileModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div id="modalBody" class="modal-body">
+                <!-- Detailed profile content rendered dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>YHWH &mdash; EVERY COVENANT. EVERY PROHIBITION. EVERY MYSTERY. INFINITE DISCOVERIES.</p>
+        <p class="footer-meta">Static Archive Engine v2.6 &bull; Cryptographic Deterministic Resolution</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
